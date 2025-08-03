@@ -1,0 +1,12 @@
+:root {
+  --color-primary: #fff;
+  --color-secondary: #253334;
+  --color-button-bg: #7C9A92;
+}
+
+body {
+  margin: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Alegreya Sans", sans-serif;
+}
