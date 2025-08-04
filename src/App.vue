@@ -1,11 +1,31 @@
-<script setup lang="ts"></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div>
+    <header class="m-header">
+      <MLogo />
+      <MNavMenu />
+    </header>
+
+    <main class="m-main">
+      <MMeditationsList />
+    </main>
+  </div>
 </template>
 
-<style scoped></style>
+<script setup lang="ts">
+import MNavMenu from '@/components/MNavMenu.vue'
+import MLogo from '@/components/MLogo.vue'
+import MMeditationsList from '@/components/meditaions-list/MMeditationsList.vue'
+</script>
+
+<style scoped>
+.m-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 4rem;
+}
+
+.m-main {
+  padding: 0 4rem;
+}
+</style>
