@@ -9,4 +9,19 @@ body {
   width: 100vw;
   height: 100vh;
   font-family: "Alegreya Sans", sans-serif;
+  background-color: var(--color-secondary);
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Alegreya", sans-serif;
 }
