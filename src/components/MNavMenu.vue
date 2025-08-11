@@ -9,7 +9,7 @@
         <MStatisticsMenuIcon />
         Статистика
       </RouterLink>
-      <RouterLink :to="{ path: '/' }" class="m-nav-menu-list__item">
+      <RouterLink :to="{ path: '/login' }" class="m-nav-menu-list__item">
         <MExitMenuIcon />
         Выход
       </RouterLink>
