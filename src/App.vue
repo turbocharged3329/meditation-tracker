@@ -6,7 +6,7 @@
     </header>
 
     <main class="m-main">
-      <MMeditationsList />
+      <RouterView />
     </main>
   </div>
 </template>
@@ -14,7 +14,6 @@
 <script setup lang="ts">
 import MNavMenu from '@/components/MNavMenu.vue'
 import MLogo from '@/components/MLogo.vue'
-import MMeditationsList from '@/components/meditaions-list/MMeditationsList.vue'
 </script>
 
 <style scoped>
