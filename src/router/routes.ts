@@ -5,7 +5,7 @@ export const routes = [
     component: () => import('../views/MainView.vue'),
   },
   {
-    path: '/',
+    path: '/statistics',
     name: 'Statistics',
     component: () => import('../views/StatisticsView.vue'),
   },
