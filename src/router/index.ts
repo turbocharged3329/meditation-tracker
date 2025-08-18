@@ -10,7 +10,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
 
-  if (!authStore.getToken() && to.name !== 'Login') {
+  if (!authStore.getToken() && !['Login', 'Registration'].includes(to.name as string)) {
     next({
       path: '/login',
     })
