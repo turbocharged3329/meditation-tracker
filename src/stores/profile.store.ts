@@ -1,10 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { Profile, ProfileResponse } from '@/interfaces/profile.interface.ts'
+import type { UserProfile, ProfileResponse } from '@/interfaces/profile.interface.ts'
 import { client } from '@/services/http.ts'
 
 export const useProfileStore = defineStore('profile', () => {
-  const profile = ref<Profile>()
+  const profile = ref<UserProfile>()
 
   const username = computed(() => profile.value?.username)
 
