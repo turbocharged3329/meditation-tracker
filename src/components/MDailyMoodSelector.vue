@@ -3,7 +3,12 @@
     <p class="m-mood-selector__title">Как вы сегодня себя чувствуете ?</p>
 
     <div class="m-mood-selector-list">
-      <button class="m-mood-selector-list-item" v-for="item in MOOD_ITEMS" :key="item.id">
+      <button
+        class="m-mood-selector-list-item"
+        v-for="item in MOOD_ITEMS"
+        :key="item.id"
+        @click="onClickMoodItem(item.id)"
+      >
         <component class="m-mood-selector-list-item__icon" :is="item.iconComponent" />
       </button>
     </div>
@@ -12,6 +17,7 @@
 
 <script setup lang="ts">
 import { defineAsyncComponent } from 'vue'
+import { useMeditationsStore } from '@/stores/meditations.store.ts'
 
 const MCalmIconComponent = defineAsyncComponent(() => import('./icons/mood/MCalmMoodIcon.vue'))
 const MFocusIconComponent = defineAsyncComponent(() => import('./icons/mood/MFocusMoodIcon.vue'))
@@ -20,26 +26,31 @@ const MSpiralIconComponent = defineAsyncComponent(() => import('./icons/mood/MSp
 
 const MOOD_ITEMS = [
   {
-    id: 1,
+    id: 'feeling_calm',
     title: 'Спокойно',
     iconComponent: MInYanIconComponent,
   },
   {
-    id: 2,
+    id: 'feeling_relax',
     title: 'Расслабленно',
     iconComponent: MCalmIconComponent,
   },
   {
-    id: 3,
+    id: 'feeling_focus',
     title: 'Фокусировано',
     iconComponent: MFocusIconComponent,
   },
   {
-    id: 4,
+    id: 'feeling_anxiety',
     title: 'Тревожно',
     iconComponent: MSpiralIconComponent,
   },
 ]
+const { setDailyStat } = useMeditationsStore()
+
+async function onClickMoodItem(moodType: string) {
+  await setDailyStat(moodType)
+}
 </script>
 
 <style scoped>

@@ -49,7 +49,6 @@ const { itemData } = defineProps<Props>()
 
 .m-meditations-list-item__start-button {
   font-size: 0.9375rem;
-  border-radius: 0.75rem;
   padding: 0.625rem 0.8rem;
   box-sizing: border-box;
   border: none;
