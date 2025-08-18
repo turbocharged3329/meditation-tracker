@@ -11,9 +11,8 @@ router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
 
   if (!authStore.getToken() && !['Login', 'Registration'].includes(to.name as string)) {
-    next({
-      path: '/login',
-    })
+    next({ path: '/login' })
+    return
   }
 
   next()
