@@ -1,4 +1,4 @@
-export interface Profile {
+export interface ProfileResponse {
   data: {
     user: {
       email: string
@@ -8,4 +8,11 @@ export interface Profile {
     }
   }
   status: string
+}
+
+export interface UserProfile {
+  email: string
+  id: number
+  last_login_at: string
+  username: string
 }

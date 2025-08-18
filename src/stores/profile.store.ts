@@ -1,6 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import type { Profile } from '@/interfaces/profile.interface.ts'
+import type { Profile, ProfileResponse } from '@/interfaces/profile.interface.ts'
 import { client } from '@/services/http.ts'
 
 export const useProfileStore = defineStore('profile', () => {
@@ -10,7 +10,7 @@ export const useProfileStore = defineStore('profile', () => {
 
   async function getProfile() {
     try {
-      const { data, status } = await client().get<Profile>('profile')
+      const { data, status } = await client().get<ProfileResponse>('profile')
 
       if (data && status == 200) {
         profile.value = data.data.user
