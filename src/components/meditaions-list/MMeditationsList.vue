@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { useMeditationsStore } from '@/stores/meditations.ts'
+import { useMeditationsStore } from '@/stores/meditations.store.ts'
 import MMeditationsListItem from '@/components/meditaions-list/MMeditationsListItem.vue'
 
 const meditationsStore = useMeditationsStore()

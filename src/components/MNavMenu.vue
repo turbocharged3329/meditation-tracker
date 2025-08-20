@@ -9,10 +9,10 @@
         <MStatisticsMenuIcon />
         Статистика
       </RouterLink>
-      <RouterLink :to="{ path: '/login' }" class="m-nav-menu-list__item">
+      <a class="m-nav-menu-list__item" @click.prevent="logout">
         <MExitMenuIcon />
         Выход
-      </RouterLink>
+      </a>
     </ul>
   </nav>
 </template>
@@ -21,6 +21,16 @@
 import MPlayMenuIcon from '@/components/icons/menu/MPlayMenuIcon.vue'
 import MStatisticsMenuIcon from '@/components/icons/menu/MStatisticsMenuIcon.vue'
 import MExitMenuIcon from '@/components/icons/menu/MExitMenuIcon.vue'
+import { useAuthStore } from '@/stores/auth.store.ts'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const { clearToken } = useAuthStore()
+
+function logout() {
+  clearToken()
+  router.replace({ name: 'Login' })
+}
 </script>
 
 <style scoped>

@@ -1,21 +1,20 @@
 <template>
-  <div class="m-logo">
-    <img alt="Логотип" src="/logo@2x.png"/>
+  <div class="m-logo" :style="{ width: `${width}px`, height: `${height}px` }">
+    <img alt="Логотип" src="/logo@3x.png" />
   </div>
-
 </template>
 
 <script setup lang="ts">
+interface Props {
+  width?: number | string
+  height?: number | string
+}
 
+const { width = 76, height = 86 } = defineProps<Props>()
 </script>
 
 <style scoped>
-.m-logo{
-  width: 76px;
-  height: 86px;
-}
-
-.m-logo img{
+.m-logo img {
   object-fit: contain;
   width: 100%;
   height: 100%;
